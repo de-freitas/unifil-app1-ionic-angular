@@ -11,6 +11,10 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'initial-page-options',
+    loadChildren: () => import('./initial-page-options/initial-page-options.module').then( m => m.InitialPageOptionsPageModule)
+  }
 ];
 
 @NgModule({

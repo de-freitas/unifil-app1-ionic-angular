@@ -1,4 +1,5 @@
-<ion-header [translucent]="true">
+
+<ion-header [translucent]="true" id="home-header">
   <ion-toolbar>
     <ion-title class='ion-title'>
       JobStart
@@ -6,12 +7,19 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<div id="home-body"> 
+  <ion-content [fullscreen]="true">
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <ion-button expand="block" routerLink="/initial-page-options">Sou Empresa</ion-button>
-    <ion-button expand="block" >Sou Aluno</ion-button>
-  </div>
+    <div id="container">
+      
+      <!-- <ion-button expand="block" fill="outline"  size="default" routerLink="/initial-page-options">   Você é: </ion-button> -->
 
-</ion-content>
+      <ion-button id="opc" expand="block" fill="outline" size="default" routerLink="/initial-page-options"> <ion-icon name="business-outline" slot="start"></ion-icon> Sou Empresa </ion-button>
+      
+      <ion-button id="opc" expand="block" fill="outline" size="default"><ion-icon name="school-outline" slot="start"> </ion-icon> Sou Aluno</ion-button>
+
+    </div>
+
+  </ion-content>
+</div>
+<ion-icon name="help-circle-outline" size="large" slot="start"></ion-icon>

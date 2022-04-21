@@ -12,8 +12,8 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'initial-page-options',
-    loadChildren: () => import('./initial-page-options/initial-page-options.module').then( m => m.InitialPageOptionsPageModule)
+    path: 'sou-empresa',
+    loadChildren: () => import('./sou-empresa/sou-empresa.module').then( m => m.SouEmpresaPageModule)
   }
 ];
 

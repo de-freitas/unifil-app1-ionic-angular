@@ -1,0 +1,20 @@
+#aluno-header {
+    //--ion-background-color: #003366;
+    --ion-background-color: #D9D9D9;
+    font-family: sans-serif;
+    color: rgb(0, 0, 0);
+    font-size: 28px;
+    font-weight: 600;
+}
+
+#aluno-searchbar {
+    --border-radius: 10px;
+}
+
+#aluno-content {
+    font-family: sans-serif;
+    border-radius: 20px;
+    background-color: green;
+    max-height: fit-content;
+    max-width: fit-content;
+}

@@ -8,12 +8,16 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'home', //remover 'sou-aluno' e colocar 'home'
     pathMatch: 'full'
   },
   {
     path: 'sou-empresa',
     loadChildren: () => import('./sou-empresa/sou-empresa.module').then( m => m.SouEmpresaPageModule)
+  },
+  {
+    path: 'sou-aluno',
+    loadChildren: () => import('./sou-aluno/sou-aluno.module').then( m => m.SouAlunoPageModule)
   }
 ];
 

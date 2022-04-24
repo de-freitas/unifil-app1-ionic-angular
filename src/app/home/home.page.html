@@ -4,7 +4,7 @@
     <ion-title class='ion-title'>
       JobStart
     </ion-title>
-  </ion-toolbar>
+  </ion-toolbar>  
 </ion-header>
 
 <div id="home-body"> 
@@ -14,14 +14,14 @@
 
       <ion-button id="opc" fill="solid" size="default" routerLink="/sou-empresa"> <ion-icon name="business-outline" slot="start"> </ion-icon> Sou Empresa</ion-button>
       <br>
-      <ion-button id="opc" fill="solid" size="default"> <ion-icon name="school-outline" slot="start"> </ion-icon> Sou Aluno</ion-button>
+      <ion-button id="opc" fill="solid" size="default" routerLink="/sou-aluno"> <ion-icon name="school-outline" slot="start"> </ion-icon> Sou Aluno</ion-button>
       <br>
-
       <ion-button (click)="helpButton()" id="help"  fill="solid" size="default" > 
         <ion-icon name="help-circle-outline" size="large"  ></ion-icon>
       </ion-button>
 
     </div>
+    
   </ion-content>
 </div>
 

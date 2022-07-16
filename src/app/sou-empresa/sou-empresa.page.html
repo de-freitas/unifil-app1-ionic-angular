@@ -1,12 +1,53 @@
-<ion-header>
+<ion-header id="emp-header">
   <ion-toolbar>
-    <ion-title>Empresa</ion-title>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
+    <ion-title class="emp-title">Empresa</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+
+<ion-content [fullscreen]="true" class="emp-body">
+
+  <div id="container-empresa">
+
+    <ion-item class="input-emp" >
+      <ion-label class="input-emp" position="floating">Nome/Razão Social:</ion-label>
+      <ion-input class="input-emp" id="nome-emp" placeholder="Insira o nome ou razão social de sua empresa" maxlength="80" required="true"> </ion-input>
+    </ion-item>
+
+    <ion-item class="input-emp">
+      <ion-label class="input-emp" position="floating">CNPJ:</ion-label>
+      <ion-input class="input-emp" id="cnpj-emp" placeholder="00.000.000/0000-00" maxlength="18" required="true"></ion-input>
+    </ion-item>
+    
+    <ion-item class="input-emp">
+      <ion-label class="input-emp" position="floating">Endereço:</ion-label>
+      <ion-input class="input-emp"  id="endereco-emp" placeholder="Logradouro, bairro, cidade" maxlength="100" required="true"></ion-input>
+    </ion-item>
+
+    <ion-item class="input-emp">
+      <ion-label class="input-emp" position="floating">Telefone:</ion-label>
+      <ion-input class="input-emp" id="telefone-emp" placeholder="+55 22 99999-9999" maxlength="17" required="true"></ion-input>
+    </ion-item>
+
+    <ion-item class="input-emp">
+      <ion-label class="input-emp" position="floating">E-mail:</ion-label>
+      <ion-input class="input-emp" id="email-emp" placeholder="unifil@unifil.com.br" maxlength="70" required="true"></ion-input>
+    </ion-item>
+    
+    <ion-button class="button" id="cancel"  fill="solid" size="default" routerLink="/home"> Voltar
+      <ion-icon name="chevron-back-circle-outline" slot="start"></ion-icon>
+    </ion-button>
+
+    <ion-button class="button" id="send"  fill="solid" size="default" slot="end">Salvar 
+      <ion-icon name="add-circle-outline"></ion-icon>
+    </ion-button>
+
+
+    <br>
+    <br>
+    <ion-button (click)="helpButtonEmp()" id="help"  fill="solid" size="default" > 
+      <ion-icon name="help-circle-outline" size="large"></ion-icon>
+    </ion-button>
+  </div>
 
 </ion-content>

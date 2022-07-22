@@ -40,5 +40,27 @@
 
 #modal {
     --border-radius: 15px;
-    --max-height: 70%;
+    --max-height: 88%;
+}
+
+.word-emp {
+    max-height: auto;
+}
+
+.word-cargo {
+    max-height: auto;
+}
+
+.word {
+    white-space: normal;
+    font-family: sans-serif;
+    text-align: justify;
+}
+
+.requisitos {
+    //max-height: 320px;
+    max-height: auto;
+}
+.beneficios {
+    max-height: auto;
 }

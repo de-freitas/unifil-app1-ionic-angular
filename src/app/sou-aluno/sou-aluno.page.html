@@ -34,6 +34,43 @@
       </ion-item-options>
     </ion-item-sliding>
 
+    <ion-item-sliding >
+      <ion-item class="aluno-vagas">
+        <ion-label> 
+          <h2 class="cargo-empresa">Analista de Sistemas | TLBP </h2>
+          <p>Cursando Análise e Desenvolvimento de Sistemas ou cursos relacionados a area de tecnologia  </p>
+          <p>Jornada de 6h, home office, vale transporte</p>
+        </ion-label>
+        <ion-note color="dark" slot="end">
+          Londrina
+        </ion-note>
+      </ion-item>
+  
+      <ion-item-options side="end" >
+        <ion-item-option id="information" >
+          <ion-icon id="open-modal2" slot="icon-only" name="information"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+    <ion-item-sliding >
+      <ion-item class="aluno-vagas">
+        <ion-label> 
+          <h2 class="cargo-empresa">Analista de Sistemas | TLBP </h2>
+          <p>Cursando Análise e Desenvolvimento de Sistemas ou cursos relacionados a area de tecnologia  </p>
+          <p>Jornada de 6h, home office, vale transporte</p>
+        </ion-label>
+        <ion-note color="dark" slot="end">
+          Londrina
+        </ion-note>
+      </ion-item>
+  
+      <ion-item-options side="end" >
+        <ion-item-option id="information" >
+          <ion-icon id="open-modal" slot="icon-only" name="information"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
 
     
     <ion-modal id="modal" #modal trigger="open-modal" animated="true">
@@ -46,43 +83,42 @@
             </ion-buttons>
           </ion-toolbar>
           <ion-list>
-            <ion-item>
+            <ion-item class="word-emp">
               <ion-icon name="business-outline" slot="start"></ion-icon>
               <ion-label>
                 <h2>Empresa:</h2>
-                <p>The Last Brazilian Prince</p>
+                <p class="word-emp" class="word">The Last Brazilian Prince  </p>
               </ion-label>
             </ion-item>
-            <ion-item>
+            <ion-item class="word-cargo">
               <ion-icon name="rocket-outline" slot="start"></ion-icon>
               <ion-label>
                 <h2>Cargo:</h2>
-                <p>Analista de Sistemas</p>
+                <p class="word-cargo" class="word">Analista de Sistemas</p>
               </ion-label>
             </ion-item>
-            <ion-item>
+            <ion-item class="requisitos">
               <ion-icon name="checkmark-outline" slot="start"></ion-icon>
               <ion-label>
                 <h2>Requisitos:</h2>
-                <p>Cursando Análise e Desenvolvimento de Sistemas, Ciência da Computação ou áreas relacionadas </p>
+                <p class="word">Cursando analise e desenvolvimento de software, engenharia da computacao, ciencia da computacao, ads, ou qualquer outra area relacionada a tecnologia. possuir conhecimentos em linguagens de programacao como python, javascript e outrass. Desejável ter conhecimento em ingles, e ter vontade de aprender sempre. busca incessante pelo conhecimento e agora eu realmente acreditoq eu esteja chegando ao fim, basta apenas colocar aspas no inicio e final dessa string e depois conntar os caracteres -- lembrar de avisar o pessoal para configurar isso no banco de dados
+                </p>
               </ion-label>
             </ion-item>
-            <ion-item>
-              <ion-avatar slot="start">
-                <ion-img src="https://i.pravatar.cc/300?u=e"></ion-img>
-              </ion-avatar>
+            <ion-item class="beneficios">
+              <ion-icon name="gift-outline" slot="start"></ion-icon>
               <ion-label>
-                <h2>Zoey Smith</h2>
-                <p>CEO</p>
+                <h2>Beneficios:</h2>
+                <p class="beneficios" class="word">Cursando analise e desenvolvimento de software, engenharia da computacao, ciencia da computacao, ads, ou qualquer outra area relacionada a tecnologia. possuir conhecimentos em linguagens de programacao como python, javascript e outrass. Desejável ter conhecimento em ingles, e ter vontade de aprender sempre. busca incessante pelo conhecimento e agora eu realmente acreditoq eu esteja chegando ao fim, basta apenas colocar aspas no inicio e final dessa string e depois conntar os caracteres -- lembrar de avisar o pessoal para configurar isso no banco de dados
+                </p>
               </ion-label>
             </ion-item>
+
           </ion-list>
         </ion-content>
       </ng-template>
     </ion-modal>
-     
-
-
+    
     <!--<ion-item-sliding >
       <ion-item class="aluno-vagas">
         <ion-label color="black" > 

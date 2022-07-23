@@ -33,25 +33,7 @@
         </ion-item-option>
       </ion-item-options>
     </ion-item-sliding>
-
-    <ion-item-sliding >
-      <ion-item class="aluno-vagas">
-        <ion-label> 
-          <h2 class="cargo-empresa">Analista de Sistemas | TLBP </h2>
-          <p>Cursando Análise e Desenvolvimento de Sistemas ou cursos relacionados a area de tecnologia  </p>
-          <p>Jornada de 6h, home office, vale transporte</p>
-        </ion-label>
-        <ion-note color="dark" slot="end">
-          Londrina
-        </ion-note>
-      </ion-item>
-  
-      <ion-item-options side="end" >
-        <ion-item-option id="information" >
-          <ion-icon id="open-modal2" slot="icon-only" name="information"></ion-icon>
-        </ion-item-option>
-      </ion-item-options>
-    </ion-item-sliding>
+    <!-- 00000 -->
     <ion-item-sliding >
       <ion-item class="aluno-vagas">
         <ion-label> 
@@ -71,17 +53,17 @@
       </ion-item-options>
     </ion-item-sliding>
 
-
     
     <ion-modal id="modal" #modal trigger="open-modal" animated="true">
       <ng-template>
-        <ion-content>
-          <ion-toolbar>
-            <ion-title> + infos da vaga </ion-title>
-            <ion-buttons slot="end">
-              <ion-button color="black" (click)="modal.dismiss()">Fechar</ion-button>
-            </ion-buttons>
-          </ion-toolbar>
+          <ion-header>
+            <ion-toolbar>
+              <ion-title> + infos da vaga </ion-title>
+              <ion-buttons slot="end">
+                <ion-button color="black" (click)="modal.dismiss()">Fechar</ion-button>
+              </ion-buttons>
+            </ion-toolbar>
+          </ion-header>
           <ion-list>
             <ion-item class="word-emp">
               <ion-icon name="business-outline" slot="start"></ion-icon>
@@ -101,21 +83,18 @@
               <ion-icon name="checkmark-outline" slot="start"></ion-icon>
               <ion-label>
                 <h2>Requisitos:</h2>
-                <p class="word">Cursando analise e desenvolvimento de software, engenharia da computacao, ciencia da computacao, ads, ou qualquer outra area relacionada a tecnologia. possuir conhecimentos em linguagens de programacao como python, javascript e outrass. Desejável ter conhecimento em ingles, e ter vontade de aprender sempre. busca incessante pelo conhecimento e agora eu realmente acreditoq eu esteja chegando ao fim, basta apenas colocar aspas no inicio e final dessa string e depois conntar os caracteres -- lembrar de avisar o pessoal para configurar isso no banco de dados
-                </p>
+                <p class="word">Lorem ipsum do lorem l Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa laboriosam </p>
               </ion-label>
             </ion-item>
             <ion-item class="beneficios">
               <ion-icon name="gift-outline" slot="start"></ion-icon>
               <ion-label>
                 <h2>Beneficios:</h2>
-                <p class="beneficios" class="word">Cursando analise e desenvolvimento de software, engenharia da computacao, ciencia da computacao, ads, ou qualquer outra area relacionada a tecnologia. possuir conhecimentos em linguagens de programacao como python, javascript e outrass. Desejável ter conhecimento em ingles, e ter vontade de aprender sempre. busca incessante pelo conhecimento e agora eu realmente acreditoq eu esteja chegando ao fim, basta apenas colocar aspas no inicio e final dessa string e depois conntar os caracteres -- lembrar de avisar o pessoal para configurar isso no banco de dados
-                </p>
+                <p class="beneficios" class="word">e.</p>
               </ion-label>
             </ion-item>
-
           </ion-list>
-        </ion-content>
+        
       </ng-template>
     </ion-modal>
     

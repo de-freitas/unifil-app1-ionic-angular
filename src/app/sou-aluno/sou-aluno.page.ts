@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, defineInjectable, OnInit } from '@angular/core';
 import { ViewChild } from '@angular/core';
 import { IonInfiniteScroll } from '@ionic/angular';
 
@@ -12,6 +12,12 @@ export class SouAlunoPage implements OnInit {
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
 
   constructor() { }
+
+  isModalOpen = false;
+  setOpen(isOpen: boolean) {
+    this.isModalOpen = isOpen;
+    console.log('abriu');
+  }
 
   loadData(event) {
     setTimeout(() => {
@@ -31,6 +37,13 @@ export class SouAlunoPage implements OnInit {
   }
 
   ngOnInit() {
+    function a() {
+      let height = document.getElementById('modal').clientHeight;
+      console.log(height);
+    }
   }
 
+
+
+  
 }

@@ -10,7 +10,7 @@
     --border-radius: 10px;
     --placeholder-color: black;
 }
-
+ 
 .aluno-vagas {
     //--color: #F5F5F5;
     --background: #F5F5F5;
@@ -30,18 +30,31 @@
     font-family: sans-serif;
 }
 
-// #aluno-content {
-//     font-family: sans-serif;
-//     border-radius: 20px;
-//     background-color: green;
-//     max-height: fit-content;
-//     max-width: fit-content;
-// }
+// ion-modal{
+//     --height: 86.5%;
+//     --border-radius: 16px;
+//     --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
+//     --width: 98%;
+//   }
 
-#modal {
-    --border-radius: 15px;
-    --max-height: 88%;
-}
+//   ion-modal ion-toolbar {
+//     --background: rgb(14 116 144);
+//     --color: white;
+//   }
+
+ion-modal{
+    --max-height: 86.5%;
+    --heigth: fit-content;
+    --border-radius: 16px;
+    --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
+    --width: 98%;
+    overflow-y: auto;
+  }
+
+  ion-modal ion-toolbar {
+    --background: rgb(14 116 144);
+    --color: white;
+  }
 
 .word-emp {
     max-height: auto;

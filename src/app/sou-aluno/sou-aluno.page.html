@@ -19,7 +19,7 @@
       <ion-item class="aluno-vagas">
         <ion-label> 
           <h2 class="cargo-empresa">Analista de Sistemas | TLBP </h2>
-          <p>Cursando Análise e Desenvolvimento de Sistemas ou cursos relacionados a area de tecnologia  </p>
+          <p >Cursando Análise e Desenvolvimento de Sistemas ou cursos relacionados a area de tecnologia  </p>
           <p>Jornada de 6h, home office, vale transporte</p>
         </ion-label>
         <ion-note color="dark" slot="end">
@@ -38,8 +38,8 @@
       <ion-item class="aluno-vagas">
         <ion-label> 
           <h2 class="cargo-empresa">Analista de Sistemas | TLBP </h2>
-          <p>Cursando Análise e Desenvolvimento de Sistemas ou cursos relacionados a area de tecnologia  </p>
-          <p>Jornada de 6h, home office, vale transporte</p>
+          <p class="p2">Cursando Análise e Desenvolvimento de Sistemas ou cursos relacionados a area de tecnologia  </p>
+          <p class="p2">Jornada de 6h, home office, vale transporte</p>
         </ion-label>
         <ion-note color="dark" slot="end">
           Londrina
@@ -56,11 +56,12 @@
     
     <ion-modal id="modal" #modal trigger="open-modal" animated="true">
       <ng-template>
+        <ion-content>
           <ion-header>
             <ion-toolbar>
-              <ion-title> + infos da vaga </ion-title>
+              <ion-title> + Infos da vaga </ion-title>
               <ion-buttons slot="end">
-                <ion-button color="black" (click)="modal.dismiss()">Fechar</ion-button>
+                <ion-button color="black" (click)="modal.dismiss()" color="black">Fechar</ion-button>
               </ion-buttons>
             </ion-toolbar>
           </ion-header>
@@ -83,18 +84,18 @@
               <ion-icon name="checkmark-outline" slot="start"></ion-icon>
               <ion-label>
                 <h2>Requisitos:</h2>
-                <p class="word">Lorem ipsum do lorem l Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa laboriosam </p>
+                <p class="word">asdasdasdasdm  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, expedita. Asperiores debitis sed accusamus tenetur, labore iste et perferendis, voluptates sit numquam vitae quidem? Molestiae voluptatibus commodi nobis incidunt saepe?dolor sit amet, consectetur adipisicing elit. Rem, expedita. Asperiores debitis sed accusamus tenetur, labore iste et perferendis, voluptates sit numquam vitae quidem? Molestiae voluptatibus commodi nobis incidunt saepe?dolor sit amet, consectetur adipisicing elit. Rem, expedita. Asperiores debitis sed accusamus tenetur, labore iste et perferendis, voluptates sit numquam vitae quidem? Molestiae voluptatibus commodi nobis incidunt saepe?dolor sit amet, consectetur adipisicing elit. Rem, expedita. Asperiores debitis sed accusamus tenetur, labore iste et perferendis, voluptates sit numquam vitae quidem? Molestiae voluptatibus commodi nobis incidunt saepe?dolor sit amet, consectetur adipisicing elit. Rem, expedita. Asperiores debitis sed accusamus tenetur, labore iste et perferendis, voluptates sit numquam vitae quidem? Molestiae voluptatibus commodi nobis incidunt saepe?dolor sit amet, consectetur adipisicing elit. Rem, expedita. Asperiores debitis sed accusamus tenetur, labore iste et perferendis, voluptates sit numquam vitae quidem? Molestiae voluptatibus commodi nobis incidunt saepe?dolor sit amet, consectetur adipisicing elit. Rem, expedita. Asperiores debitis sed accusamus tenetur, labore iste et perferendis, voluptates sit numquam vitae quidem? Molestiae voluptatibus commodi nobis incidunt saepe?dolor sit amet, consectetur adipisicing elit. Rem, expedita. Asperiores debitis sed accusamus tenetur, labore iste et perferendis, voluptates sit numquam vitae quidem? Molestiae voluptatibus commodi nobis incidunt saepe?dolor sit amet, consectetur adipisicing elit. Rem, expedita. Asperiores debitis sed accusamus tenetur, labore iste et perferendis, voluptates sit numquam vitae quidem? Molestiae voluptatibus commodi nobis incidunt saepe?dolor sit amet, consectetur adipisicing elit. Rem, expedita. Asperiores debitis sed accusamus tenetur, labore iste et perferendis, voluptates sit numquam vitae quidem? Molestiae voluptatibus commodi nobis incidunt saepe?dolor sit amet, consectetur adipisicing elit. Rem, expedita. Asperiores debitis sed accusamus tenetur, labore iste et perferendis, voluptates sit numquam vitae quidem? Molestiae voluptatibus commodi nobis incidunt saepe?dolor sit amet, consectetur adipisicing elit. Rem, expedita. Asperiores debitis sed accusamus tenetur, labore iste et perferendis, voluptates sit numquam vitae quidem? Molestiae voluptatibus commodi nobis incidunt saepe?dolor sit amet, consectetur adipisicing elit. Rem, expedita. Asperiores debitis sed accusamus tenetur, labore iste et perferendis, voluptates sit numquam vitae quidem? Molestiae voluptatibus commodi nobis incidunt saepe?</p>
               </ion-label>
             </ion-item>
             <ion-item class="beneficios">
               <ion-icon name="gift-outline" slot="start"></ion-icon>
               <ion-label>
                 <h2>Beneficios:</h2>
-                <p class="beneficios" class="word">e.</p>
+                <p class="beneficios" class="word"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore voluptas dolorum ipsam unde quia impedit nam consectetur nemo officia. Iure ut excepturi inventore perferendis adipisci illum distinctio, qui magnam vero.</p>
               </ion-label>
             </ion-item>
           </ion-list>
-        
+        </ion-content>
       </ng-template>
     </ion-modal>
     

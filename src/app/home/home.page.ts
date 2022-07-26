@@ -24,14 +24,14 @@ export class HomePage {
       ]
     });
     toast.present();
-  }
+  };
   //
   async presentActionSheet() {
     const actionSheet = await this.actionSheetController.create({
-      header: 'Albums',
+      header: 'Sou Empresa',
       cssClass: 'my-custom-class',
       buttons: [{
-        text: 'Delete',
+        text: 'Cadastrar minha empresa',
         role: 'destructive',
         icon: 'trash',
         id: 'delete-button',
@@ -42,27 +42,14 @@ export class HomePage {
           console.log('Delete clicked');
         }
       }, {
-        text: 'Share',
+        text: 'Cadastrar vagas',
         icon: 'share',
         data: 10,
         handler: () => {
           console.log('Share clicked');
         }
       }, {
-        text: 'Play (open modal)',
-        icon: 'caret-forward-circle',
-        data: 'Data value',
-        handler: () => {
-          console.log('Play clicked');
-        }
-      }, {
-        text: 'Favorite',
-        icon: 'heart',
-        handler: () => {
-          console.log('Favorite clicked');
-        }
-      }, {
-        text: 'Cancel',
+        text: 'Cancelar',
         icon: 'close',
         role: 'cancel',
         handler: () => {
@@ -72,7 +59,10 @@ export class HomePage {
     });
     await actionSheet.present();
 
+    let routerlink = document.getElementById
+
     const { role, data } = await actionSheet.onDidDismiss();
     console.log('onDidDismiss resolved with role and data', role, data);
   }
+
 }

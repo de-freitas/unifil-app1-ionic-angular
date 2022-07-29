@@ -1,12 +1,16 @@
 import { Component } from '@angular/core';
 import { ToastController } from '@ionic/angular';
 import { ActionSheetController } from '@ionic/angular';
+//
+
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
+
 export class HomePage {
 
   constructor(public toastController: ToastController, public actionSheetController: ActionSheetController) {}
@@ -25,7 +29,7 @@ export class HomePage {
     });
     toast.present();
   };
-  //
+  // cria o action sheet
   async presentActionSheet() {
     const actionSheet = await this.actionSheetController.create({
       header: 'Sou Empresa',
@@ -33,7 +37,7 @@ export class HomePage {
       buttons: [{
         text: 'Cadastrar minha empresa',
         role: 'destructive',
-        icon: 'trash',
+        icon: 'trail-sign-outline',
         id: 'delete-button',
         data: {
           type: 'delete'
@@ -59,10 +63,15 @@ export class HomePage {
     });
     await actionSheet.present();
 
-    let routerlink = document.getElementById
+    actionSheet.setAttribute('id', 'action-sheet');
+    //let routerlink = document.getElementById
 
     const { role, data } = await actionSheet.onDidDismiss();
     console.log('onDidDismiss resolved with role and data', role, data);
   }
 
 }
+
+
+
+

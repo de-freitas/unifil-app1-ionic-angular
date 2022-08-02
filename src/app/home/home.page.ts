@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ToastController } from '@ionic/angular';
+import { NavController, ToastController } from '@ionic/angular';
 import { ActionSheetController } from '@ionic/angular';
 //
 
@@ -13,7 +13,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 export class HomePage {
 
-  constructor(public toastController: ToastController, public actionSheetController: ActionSheetController) {}
+  constructor(public toastController: ToastController, public actionSheetController: ActionSheetController, public navCtrl: NavController) {} 
 
 
   async helpButton() {
@@ -43,7 +43,7 @@ export class HomePage {
           type: 'delete'
         },
         handler: () => {
-          console.log('Delete clicked');
+          this.navigation('sou-empresa');
         }
       }, {
         text: 'Cadastrar vagas',
@@ -68,6 +68,10 @@ export class HomePage {
 
     const { role, data } = await actionSheet.onDidDismiss();
     console.log('onDidDismiss resolved with role and data', role, data);
+  }
+
+  navigation(page) {
+    this.navCtrl.navigateForward(page);
   }
 
 }

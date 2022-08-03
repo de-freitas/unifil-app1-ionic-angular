@@ -1,0 +1,41 @@
+<ion-header id="emp-header">
+  <ion-toolbar>
+    <ion-title class="emp-title">Autenticação</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true" class="emp-body">
+
+  <section> 
+    <div id="container-empresa">
+
+      <div class="input-auth">
+        <ion-item class="input-auth" >
+          <ion-label class="input-auth" position="floating">CNPJ: </ion-label>
+          <ion-input class="input-auth" id="emp-usu" placeholder="00.000.000/0000-00" maxlength="80" required="true"> </ion-input>
+        </ion-item>
+
+        <ion-item class="input-emp">
+          <ion-label class="input-auth" position="floating">Senha: </ion-label>
+          <ion-input class="input-auth" id="emp-pass" placeholder="********" maxlength="18" required="true"></ion-input>
+        </ion-item>
+      </div>
+      <div class="buttons">  
+        <ion-button class="button" id="cancel"  fill="solid" size="default" routerLink="/home"> Voltar
+          <ion-icon name="chevron-back-circle-outline" slot="start"></ion-icon>
+        </ion-button>
+
+        <ion-button class="button" id="enter"  fill="solid" size="default" slot="end">Entrar 
+          <ion-icon name="add-circle-outline"></ion-icon>
+        </ion-button>
+        <br>
+        <br>
+        <ion-button (click)="helpButton()" id="help"  fill="solid" size="default" > 
+          <ion-icon name="help-circle-outline" size="large"></ion-icon>
+        </ion-button>
+      </div>
+        
+    </div>
+  </section>
+</ion-content>

@@ -18,7 +18,11 @@ const routes: Routes = [
   {
     path: 'sou-aluno',
     loadChildren: () => import('./sou-aluno/sou-aluno.module').then( m => m.SouAlunoPageModule)
+  },  {
+    path: 'empresa-autenticacao',
+    loadChildren: () => import('./empresa-autenticacao/empresa-autenticacao.module').then( m => m.EmpresaAutenticacaoPageModule)
   }
+
 ];
 
 @NgModule({

@@ -50,7 +50,7 @@ export class HomePage {
         icon: 'share',
         data: 10,
         handler: () => {
-          console.log('Share clicked');
+          this.navigation('empresa-autenticacao');
         }
       }, {
         text: 'Cancelar',

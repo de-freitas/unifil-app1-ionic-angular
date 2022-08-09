@@ -12,7 +12,7 @@ export class SouEmpresaPage implements OnInit{
 
   async helpButtonEmp() {
     const toast = await this.toastController.create({
-      message: "Aqui você pode cadastrar a sua empresa. Caso deseje, insira as informações solicitadas e clique em 'Salvar'.",
+      message: "Aqui você pode cadastrar a sua empresa. Caso queira, insira as informações solicitadas e clique em 'Salvar'.",
       duration: 3000,
       buttons: [
         {

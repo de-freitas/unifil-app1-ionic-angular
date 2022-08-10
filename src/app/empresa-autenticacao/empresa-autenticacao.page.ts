@@ -12,11 +12,12 @@ export class EmpresaAutenticacaoPage{
 
   async helpButton() {
     const toast = await this.toastController.create({
-      message: "Insira o CNPJ e a Senha para autenticar. Caso ainda não tenha cadastro, clique <strong> aqui >>> </strong>",
-      duration: 30000,
+      message: "Insira o CNPJ e a Senha para autenticar. Caso ainda não tenha cadastro, clique aqui >>> </strong>",
+      duration: 3000,
       buttons: [
         {
-          icon: 'chevron-forward-circle-outline',
+          icon: 'return-up-forward-outline',
+          cssClass: 'icon',
           role: 'cancel',    
           side: 'end',
           handler: () => {
@@ -24,8 +25,7 @@ export class EmpresaAutenticacaoPage{
             this.navigation('sou-empresa');
       } 
         }
-      ],
-      color: 'primary'
+      ]
     });
 
     toast.present();

@@ -1,5 +1,5 @@
 
-<ion-header [translucent]="true" id="home-header">
+<ion-header [translucent]="true" class="home-header">
   <ion-toolbar>
     <ion-title class='ion-title'>
       JobStart
@@ -7,22 +7,27 @@
   </ion-toolbar>  
 </ion-header>
 
-<div id="home-body"> 
-  <ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true">
+  <div class="home-body">
 
-    <div id="container">
+    <div class="home-buttons" >
+      
+      <div class="emp-button">
+        <ion-button class="button" fill="solid" size="default" (click)="presentActionSheet()">
+          <ion-icon name="business-outline" slot="start"> </ion-icon> Sou Empresa
+        </ion-button>
+      </div>
+      <div class="aluno-button">
+        <ion-button class="button" fill="solid" size="default" routerLink="/sou-aluno"> <ion-icon name="school-outline" slot="end"> </ion-icon> Sou Aluno</ion-button>
+      </div>
 
-      <ion-button class="opc" fill="solid" size="default" (click)="presentActionSheet()">
-        <ion-icon name="business-outline" slot="start"> </ion-icon> Sou Empresa
-      </ion-button>
-      <br>
-      <ion-button class="opc" fill="solid" size="default" routerLink="/sou-aluno"> <ion-icon name="school-outline" slot="start"> </ion-icon> Sou Aluno</ion-button>
-      <br>
-      <ion-button (click)="helpButton()" id="help"  fill="solid" size="default" > 
-        <ion-icon name="help-circle-outline" size="large"  ></ion-icon>
-      </ion-button>
+      <div class="help-button">
+        <ion-button class="button" (click)="helpButton()" id="help"  fill="solid" size="default" > 
+          <ion-icon name="help-circle-outline" size="large"  ></ion-icon>
+        </ion-button>
+      </div>
 
     </div>
     
-  </ion-content>
-</div>
+  </div>  
+</ion-content>

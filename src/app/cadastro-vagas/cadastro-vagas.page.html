@@ -1,0 +1,57 @@
+<ion-header class="emp-header">
+  <ion-toolbar>
+    <ion-title class="emp-title"> Cadastro de Vagas </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true" class="emp-body">
+
+  <div id="container-cadastro-vagas">
+
+    <div class="labels-vaga">
+      <ion-item class="inputs-vaga">
+        <ion-label class="input-vaga" position="floating">Nome Empresa - autofill</ion-label>
+        <ion-input  id="nome-emp" placeholder="Insira o nome ou razão social de sua empresa" maxlength="80" required="true"> </ion-input>
+      </ion-item>
+
+      <ion-item class="inputs-vaga">
+        <ion-label class="input-vaga" position="floating">Cargo: </ion-label>
+        <ion-input id="cnpj-emp" placeholder="00.000.000/0000-00" required="true"></ion-input>
+      </ion-item>
+      
+      <ion-item class="inputs-vaga">
+        <ion-label class="input-vaga" position="floating">Requisitos: </ion-label>
+        <ion-input  id="endereco-emp" placeholder="Logradouro, bairro, cidade" required="true"></ion-input>
+      </ion-item>
+
+      <ion-item class="inputs-vaga">
+        <ion-label class="input-vaga" position="floating">Benefícios: </ion-label>
+        <ion-input id="telefone-emp" placeholder="+55 22 99999-9999" required="true"></ion-input>
+      </ion-item>
+
+      <ion-item class="inputs-vaga">
+        <ion-label class="input-vaga" position="floating">E-mail:</ion-label>
+        <ion-input id="email-emp" placeholder="unifil@unifil.com.br" required="true"></ion-input>
+      </ion-item>
+    </div>
+
+    <div class="emp-buttons">
+      <ion-button class="button" id="cancel"  fill="solid" size="default" routerLink="/home"> Voltar
+        <ion-icon name="chevron-back-circle-outline" slot="start"></ion-icon>
+      </ion-button>
+
+      <ion-button class="button" id="send"  fill="solid" size="default" slot="end">Salvar 
+        <ion-icon name="add-circle-outline"></ion-icon>
+      </ion-button>
+    </div>
+
+    <div class="emp-help-button">
+      <ion-button (click)="helpButtonEmp()" class="emp-button" id="help"  fill="solid" size="default" > 
+        <ion-icon name="help-circle-outline" size="large"></ion-icon>
+      </ion-button>
+    </div>
+    
+  </div>
+
+</ion-content>

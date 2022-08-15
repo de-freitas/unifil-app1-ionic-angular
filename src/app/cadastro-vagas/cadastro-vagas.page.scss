@@ -1,9 +1,9 @@
-.auth-header {
+.emp-header {
     //--ion-background-color: #003366;
     --ion-background-color: #D9D9D9;
 }
 
-.auth-title {
+.emp-title {
     text-align: center;
 
     font-family: sans-serif;
@@ -12,27 +12,11 @@
     font-weight: 600;
 }
 
-.auth-body {
+.emp-body {
     --ion-background-color: white;
 }
 
-.auth-informativo {
-    h2 {
-        font-size: 20px;
-        font-style: sans-serif;
-    }
-    text-align: center;
-    margin-top: 25%;
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-bottom: 20px;
-    //padding-top: 25%;
-    border-left-style: solid;
-    border-left-color: #D9D9D9;
-    border-right-style: solid;
-    border-right-color: #D9D9D9;
-}
-.input-auth {
+.labels-vaga {
     --ion-background-color: #F5F5F5;
     background-color: #D9D9D9;
     display: flex;
@@ -50,18 +34,21 @@
     border-radius: 15px 50px;
 }
 
-.inputs-emp {
+.inputs-vaga {
     --border-radius: 8px 20px 15px;
-} 
+    max-height: fit-content;
+}   
 
-.auth-buttons {
+.emp-buttons {
     display: flex;
     justify-content: center;
-    align-items: center; 
-    margin-top: 10px;
+    align-items: center;
+    margin-top: 10px; 
+    --background: #D9D9D9;
+    --color: black;
 }
 
-.auth-help-button {
+.emp-help-button {
     display: flex;
     justify-content: center;
     align-items: center;     
@@ -70,6 +57,7 @@
 .button {
     font-style: sans-serif;
     font-weight: 550;
+
     --background: #D9D9D9;
     color: #000000;
     --border-radius: 5px;
@@ -77,4 +65,8 @@
         --ionicon-stroke-width: 23px;
         font-size: 25px;
     }
+}
+
+.ion-text-wrap {
+    white-space: normal;
 }

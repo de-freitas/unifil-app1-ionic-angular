@@ -21,6 +21,10 @@ const routes: Routes = [
   },  {
     path: 'empresa-autenticacao',
     loadChildren: () => import('./empresa-autenticacao/empresa-autenticacao.module').then( m => m.EmpresaAutenticacaoPageModule)
+  },
+  {
+    path: 'cadastro-vagas',
+    loadChildren: () => import('./cadastro-vagas/cadastro-vagas.module').then( m => m.CadastroVagasPageModule)
   }
 
 ];

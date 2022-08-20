@@ -1,0 +1,58 @@
+<ion-header class="emp-header">
+  <ion-toolbar>
+    <ion-title class="emp-title"> Cadastro de Vagas </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true" class="emp-body">
+
+  <div id="container-cadastro-vagas">
+
+    <div class="labels-vaga">
+      <ion-item class="inputs-vaga">
+        <ion-label class="input-vaga" position="floating">Área de Atuação: </ion-label>
+        <ion-textarea minlength="5" autoGrow="true" id="" placeholder="Insira a área de atuação da vaga" maxlength="80" required="true"> </ion-textarea>
+      </ion-item>
+
+      <ion-item class="inputs-vaga">
+        <ion-label class="input-vaga" position="floating">Cargo: </ion-label>
+        <ion-textarea cols="20" autoGrow="true" id="cnpj-emp" placeholder="00.000.000/0000-00" required="true"></ion-textarea>
+      </ion-item>
+      
+      <ion-item class="inputs-vaga">
+        <ion-label class="input-vaga" position="floating">Requisitos: </ion-label>
+        <ion-textarea cols="6" autoGrow="true" id="endereco-emp" placeholder="Logradouro, bairro, cidade" required="true"></ion-textarea>
+      </ion-item>
+
+      <ion-item class="inputs-vaga">
+        <ion-label class="input-vaga" position="floating">Benefícios: </ion-label>
+        <ion-textarea cols="6" autoGrow="true" id="telefone-emp" placeholder="Descreva os be" required="true"></ion-textarea>
+      </ion-item>
+
+      <ion-item class="inputs-vaga">
+        <ion-label class="input-vaga" position="floating">Salário:</ion-label>
+        <ion-textarea cols="6" autoGrow="true" id="email-emp" placeholder="000.000,00" required="true"></ion-textarea>
+      </ion-item>
+
+    </div>
+
+    <div class="emp-buttons">
+      <ion-button class="button" id="cancel"  fill="solid" size="default" routerLink="/home"> Voltar
+        <ion-icon name="chevron-back-circle-outline" slot="start"></ion-icon>
+      </ion-button>
+
+      <ion-button class="button" id="send"  fill="solid" size="default" slot="end">Salvar 
+        <ion-icon name="add-circle-outline"></ion-icon>
+      </ion-button>
+    </div>
+
+    <div class="emp-help-button">
+      <ion-button class="emp-button" id="help"  fill="solid" size="default" > 
+        <ion-icon name="help-circle-outline" size="large"></ion-icon>
+      </ion-button>
+    </div>
+    
+  </div>
+
+</ion-content>

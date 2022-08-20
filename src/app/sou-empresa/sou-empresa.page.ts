@@ -1,14 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastController } from '@ionic/angular';
+import { ApiRequestService } from '../services/api-request.service';
 
 @Component({
   selector: 'app-sou-empresa',
   templateUrl: './sou-empresa.page.html',
   styleUrls: ['./sou-empresa.page.scss'],
 })
-export class SouEmpresaPage implements OnInit{
+export class SouEmpresaPage implements OnInit {
+  nome: String = '';
+  cnpj: String = '';
+  endereco: String = '';
+  telefone: String = '';
+  email: String = '';
 
-  constructor(public toastController: ToastController) {}
+  constructor(public toastController: ToastController, private service: ApiRequestService) { }
 
   async helpButtonEmp() {
     const toast = await this.toastController.create({
@@ -20,11 +26,42 @@ export class SouEmpresaPage implements OnInit{
           role: 'cancel',
         }
       ]
-  })
+    })
     toast.present();
   };
 
   ngOnInit(): void {
-    
+
   }
+
+  saveEmpresa() {
+    var dados: any = {
+      cnpj: this.cnpj,
+      email: this.email,
+      localizacao: this.endereco,
+      nomeRazaoSocial: this.nome,
+      telefone: this.telefone
+    };
+
+    this.service.saveEmpresa(dados).subscribe(
+      (data) => {
+        this.mensagem('EMPRESA CADASTRADA COM SUSEXO');
+      },
+      (erro) => this.mensagem(erro.error.message)      
+    );
+  }
+
+  async mensagem(mensagem: string) {
+    const toast = await this.toastController.create({
+      message: mensagem,
+      duration: 3000,
+      buttons: [
+        {
+          icon: 'checkmark-outline',
+          role: 'cancel',
+        }
+      ]
+    });
+    toast.present();
+  };
 }

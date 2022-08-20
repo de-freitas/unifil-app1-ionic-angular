@@ -1,6 +1,7 @@
 import { Component, defineInjectable, OnInit } from '@angular/core';
 import { ViewChild } from '@angular/core';
-import { IonInfiniteScroll } from '@ionic/angular';
+import { IonInfiniteScroll, ToastController } from '@ionic/angular';
+import { ApiRequestService } from '../services/api-request.service';
 
 @Component({
   selector: 'app-sou-aluno',
@@ -8,10 +9,11 @@ import { IonInfiniteScroll } from '@ionic/angular';
   styleUrls: ['./sou-aluno.page.scss'],
 })
 export class SouAlunoPage implements OnInit {
+  public vagas: any = [];
 
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
 
-  constructor() { }
+  constructor(public toastController: ToastController, private service: ApiRequestService) { }
 
   isModalOpen = false;
   setOpen(isOpen: boolean) {
@@ -37,13 +39,30 @@ export class SouAlunoPage implements OnInit {
   }
 
   ngOnInit() {
+    //PERGUNTAR CLAUDIN DEPOIS
     function a() {
       let height = document.getElementById('modal').clientHeight;
       console.log(height);
     }
+    this.service.getVagas().subscribe(
+      (data) => {
+        this.vagas = data;
+      },
+      (erro) => this.mensagem(erro.error.message)  
+    );
   }
 
-
-
-  
+  async mensagem(mensagem: string) {
+    const toast = await this.toastController.create({
+      message: mensagem,
+      duration: 3000,
+      buttons: [
+        {
+          icon: 'checkmark-outline',
+          role: 'cancel',
+        }
+      ]
+    });
+    toast.present();
+  };  
 }

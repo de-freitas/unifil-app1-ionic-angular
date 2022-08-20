@@ -1,5 +1,6 @@
 import { ToastController, NavController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
+import { ApiRequestService } from '../services/api-request.service';
 
 @Component({
   selector: 'app-empresa-autenticacao',
@@ -7,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./empresa-autenticacao.page.scss'],
 })
 export class EmpresaAutenticacaoPage{
+  cnpj: string = '';
+  senha: string = '';
 
-  constructor(public toastController: ToastController, public navCtrl: NavController) { }
+  constructor(public toastController: ToastController, public navCtrl: NavController,
+    private service: ApiRequestService) { }
 
   async helpButton() {
     const toast = await this.toastController.create({
@@ -37,5 +41,15 @@ export class EmpresaAutenticacaoPage{
   }
   // ngOnInit() {
   // }
+
+  verificarCredenciais(){
+    var dados: any = {
+      cnpj: this.cnpj,
+      senha: this.senha
+    };
+
+    this.service.verificarCredenciais(dados);
+    window.location.href = '/home';
+  }
 
 }

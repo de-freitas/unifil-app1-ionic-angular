@@ -17,11 +17,11 @@
       <div class="input-auth">
         <ion-item>
           <ion-label position="floating">CNPJ: </ion-label>
-          <ion-input id="emp-usu" placeholder="00.000.000/0000-00" maxlength="80" required="true"> </ion-input>
+          <ion-input id="emp-usu" [(ngModel)]="cnpj" placeholder="00.000.000/0000-00" maxlength="80" required="true"> </ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="floating">Senha: </ion-label>
-          <ion-input id="emp-pass" placeholder="********" maxlength="18" required="true"></ion-input>
+          <ion-input id="emp-pass" type="password" [(ngModel)]="senha" placeholder="********" maxlength="18" required="true"></ion-input>
         </ion-item>
       </div>
       
@@ -30,7 +30,7 @@
           <ion-icon name="chevron-back-outline" slot="start"></ion-icon>
         </ion-button>
 
-        <ion-button class="button" id="enter"  fill="solid" size="default" slot="end">Entrar 
+        <ion-button class="button" id="enter" (click)="verificarCredenciais()" fill="solid" size="default" slot="end">Entrar 
           <ion-icon name="chevron-forward-outline"></ion-icon>
         </ion-button>
       </div>

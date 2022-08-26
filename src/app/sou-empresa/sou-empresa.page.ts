@@ -13,6 +13,7 @@ export class SouEmpresaPage implements OnInit {
   endereco: String = '';
   telefone: String = '';
   email: String = '';
+  senha: String = '';
 
   constructor(public toastController: ToastController, private service: ApiRequestService) { }
 
@@ -40,6 +41,7 @@ export class SouEmpresaPage implements OnInit {
       email: this.email,
       localizacao: this.endereco,
       nomeRazaoSocial: this.nome,
+      senha: this.senha,
       telefone: this.telefone
     };
 

@@ -25,7 +25,7 @@ export class ApiRequestService {
   }
 
   verificarCredenciais(data: any){
-
+    return this.httpClient.post(`${this.url}usuarios`, JSON.stringify(data), this.options);
   }
 
   getVagas(){
@@ -33,7 +33,7 @@ export class ApiRequestService {
   }
 
   saveVaga(data: any){
-
+    return this.httpClient.post(`${this.url}vagas`, JSON.stringify(data), this.options);
   }
 
   deleteVaga(id: Number){

@@ -47,7 +47,7 @@ export class SouEmpresaPage implements OnInit {
 
     this.service.saveEmpresa(dados).subscribe(
       (data) => {
-        this.mensagem('EMPRESA CADASTRADA COM SUSEXO');
+        this.mensagem('Empresa cadastrada com sucesso!');
       },
       (erro) => this.mensagem(erro.error.message)      
     );

@@ -38,7 +38,7 @@ export class CadastroVagasPage implements OnInit {
 
     this.service.saveVaga(dados).subscribe(
       (data) => {
-        this.mensagem('VAGA CADASTRADA COM SUSEXO');
+        this.mensagem('Vaga cadastrada com sucesso!');
 
         this.area = null;
         this.cargo = null;

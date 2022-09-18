@@ -16,11 +16,11 @@
       <ion-item class="aluno-vagas">
         <ion-label>
           <h2 class="cargo-empresa">{{vaga.cargo}} </h2>
-          <p>{{vaga.descricao}} </p>
           <p>{{vaga.areaAtuacao}}</p>
+          <p>{{vaga.empresa.nomeRazaoSocial}} </p>
         </ion-label>
         <ion-note color="dark" slot="end">
-          {{vaga.empresa.localizacao}}
+          {{vaga.empresa.cidade}}
         </ion-note>
       </ion-item>
 
@@ -62,7 +62,7 @@
               <ion-label>
                 <h2>Requisitos:</h2>
                 <p class="word">
-                  {{vaga.descricao}}
+                  {{vaga.requisitos}}
                 </p>
               </ion-label>
             </ion-item>
@@ -71,7 +71,7 @@
               <ion-label>
                 <h2>Beneficios:</h2>
                 <p class="beneficios" class="word"> 
-                  {{vaga.areaAtuacao}}
+                  {{vaga.beneficios}}
                 </p>
               </ion-label>
             </ion-item>

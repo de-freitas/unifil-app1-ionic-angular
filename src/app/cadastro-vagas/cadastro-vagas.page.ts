@@ -30,14 +30,21 @@ export class CadastroVagasPage implements OnInit {
     var dados: any = {
       areaAtuacao: this.area,
       cargo: this.cargo,
-      descricao: this.beneficios + this.requisitos,
+      beneficios: this.beneficios,
       empresaId: +this.idEmpresa,
+      requisitos: this.requisitos,
       salario: +this.salario
     };
 
     this.service.saveVaga(dados).subscribe(
       (data) => {
         this.mensagem('VAGA CADASTRADA COM SUSEXO');
+
+        this.area = null;
+        this.cargo = null;
+        this.beneficios = null;
+        this.requisitos = null;
+        this.salario = null;
       },
       (erro) => {
         this.mensagem(erro.error.message);

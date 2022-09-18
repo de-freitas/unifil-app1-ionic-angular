@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ToastController } from '@ionic/angular';
+import { NavController, ToastController } from '@ionic/angular';
 import { ApiRequestService } from '../services/api-request.service';
 
 @Component({
@@ -15,7 +15,7 @@ export class SouEmpresaPage implements OnInit {
   email: String = '';
   senha: String = '';
 
-  constructor(public toastController: ToastController, private service: ApiRequestService) { }
+  constructor(public toastController: ToastController, public navCtrl: NavController, private service: ApiRequestService) { }
 
   async helpButtonEmp() {
     const toast = await this.toastController.create({
@@ -39,7 +39,7 @@ export class SouEmpresaPage implements OnInit {
     var dados: any = {
       cnpj: this.cnpj,
       email: this.email,
-      localizacao: this.endereco,
+      cidade: this.endereco,
       nomeRazaoSocial: this.nome,
       senha: this.senha,
       telefone: this.telefone
@@ -48,6 +48,7 @@ export class SouEmpresaPage implements OnInit {
     this.service.saveEmpresa(dados).subscribe(
       (data) => {
         this.mensagem('EMPRESA CADASTRADA COM SUSEXO');
+        this.navCtrl.navigateForward('/empresa-autenticacao');
       },
       (erro) => this.mensagem(erro.error.message)      
     );

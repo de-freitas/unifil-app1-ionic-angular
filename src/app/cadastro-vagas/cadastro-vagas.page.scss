@@ -17,25 +17,24 @@
 }
 
 .labels-vaga {
-    --ion-background-color: #F5F5F5;
     background-color: #D9D9D9;
     display: flex;
     flex-direction: column;
     gap: 1px;
-    
-    margin-top: 20px;
-    margin-bottom: 10px;
-    margin-left: 2px;
-    margin-right: 2px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 8px;
-    padding-right: 8px;
-    border-radius: 15px 50px;
+    margin-top: 1.26rem;
+    margin-bottom: 0.625rem;
+    margin-left: 0.125rem;
+    margin-right: 0.125rem;
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    padding-left: 0.3125rem;
+    padding-right: 0.3125rem;
+    border-radius: 10px;
 }
 
 .inputs-vaga {
-    --border-radius: 8px 20px 15px;
+    --border-radius: 10px;
+    max-height: -moz-fit-content;
     max-height: fit-content;
 }   
 

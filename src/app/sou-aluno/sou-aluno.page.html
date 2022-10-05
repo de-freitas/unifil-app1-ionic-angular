@@ -1,6 +1,6 @@
 <ion-header translucent="true" class="aluno-header">
   <ion-toolbar>
-    <ion-title class="aluno-header">Vagas</ion-title>
+    <ion-title class="aluno-title">Vagas</ion-title>
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
@@ -11,26 +11,27 @@
   <ion-searchbar id="aluno-searchbar" color="light" placeholder="Buscar vagas" showCancelButton="focus">
   </ion-searchbar>
 
-  <ion-list lines="full" *ngFor='let vaga of vagas; let i = index'>
-    <ion-item-sliding>
-      <ion-item class="aluno-vagas">
-        <ion-label>
-          <h2 class="cargo-empresa">{{vaga.cargo}} </h2>
-          <p>{{vaga.areaAtuacao}}</p>
-          <p>{{vaga.empresa.nomeRazaoSocial}} </p>
-        </ion-label>
-        <ion-note color="dark" slot="end">
-          {{vaga.empresa.cidade}}
-        </ion-note>
-      </ion-item>
+  <ion-list class="aluno-vagas" lines="full" *ngFor='let vaga of vagas; let i = index'>
+    <div class="aluno-vagas">
+      <ion-item-sliding class="aluno-vagas">
+        <ion-item class="aluno-vagas">
+          <ion-label>
+            <h2 class="cargo-empresa">{{vaga.cargo}} </h2>
+            <p>{{vaga.areaAtuacao}}</p>
+            <p>{{vaga.empresa.nomeRazaoSocial}} </p>
+          </ion-label>
+          <ion-note color="dark" slot="end">
+            {{vaga.empresa.cidade}}
+          </ion-note>
+        </ion-item>
 
-      <ion-item-options side="end">
-        <ion-item-option id="information">
-          <ion-icon id="{{'open-modal' + i}}" slot="icon-only" name="information"></ion-icon>
-        </ion-item-option>
-      </ion-item-options>
-    </ion-item-sliding>
-
+        <ion-item-options side="end">
+          <ion-item-option id="information">
+            <ion-icon id="{{'open-modal' + i}}" slot="icon-only" name="information"></ion-icon>
+          </ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+    </div>
     <ion-modal id="modal" #modal trigger="{{'open-modal' + i}}" animated="true">
       <ng-template>
         <ion-content>

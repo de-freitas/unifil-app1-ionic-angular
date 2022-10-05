@@ -22,7 +22,7 @@ export class HomePage {
       duration: 3000,
       buttons: [
         {
-          icon: 'checkmark-outline',
+          icon: 'checkmark-done-outline',
           role: 'cancel',
         }
       ]
@@ -32,23 +32,18 @@ export class HomePage {
   // cria o action sheet
   async presentActionSheet() {
     const actionSheet = await this.actionSheetController.create({
-      header: 'Sou Empresa',
       cssClass: 'my-custom-class',
       buttons: [{
         text: 'Cadastrar minha empresa',
         role: 'destructive',
-        icon: 'trail-sign-outline',
+        icon: 'podium-outline',
         id: 'delete-button',
-        data: {
-          type: 'delete'
-        },
         handler: () => {
           this.navigation('sou-empresa');
         }
       }, {
         text: 'Cadastrar vagas',
-        icon: 'share',
-        data: 10,
+        icon: 'reader-outline',
         handler: () => {
           this.navigation('empresa-autenticacao');
         }
@@ -56,18 +51,9 @@ export class HomePage {
         text: 'Cancelar',
         icon: 'close',
         role: 'cancel',
-        handler: () => {
-          console.log('Cancel clicked');
-        }
       }]
     });
     await actionSheet.present();
-
-    actionSheet.setAttribute('id', 'action-sheet');
-    //let routerlink = document.getElementById
-
-    const { role, data } = await actionSheet.onDidDismiss();
-    console.log('onDidDismiss resolved with role and data', role, data);
   }
 
   navigation(page) {

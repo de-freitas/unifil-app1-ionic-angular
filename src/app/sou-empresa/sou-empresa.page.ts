@@ -23,7 +23,7 @@ export class SouEmpresaPage implements OnInit {
       duration: 3000,
       buttons: [
         {
-          icon: 'checkmark-outline',
+          icon: 'checkmark-done-outline',
           role: 'cancel',
         }
       ]

@@ -1,9 +1,96 @@
-<ion-header>
+<ion-header translucent="true" class="empresa-header">
   <ion-toolbar>
-    <ion-title>empresa-vagas</ion-title>
+    <ion-title class="aluno-title">Minhas Vagas</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+
+<ion-content scroll-y="true" fullscreen="true">
+  
+  <div class="placeholder">
+    Gerencie suas vagas
+  </div>
+
+  <ion-list class="aluno-vagas" lines="full" *ngFor='let vaga of vagas; let i = index'>
+    <div class="aluno-vagas">
+      <ion-item-sliding class="aluno-vagas">
+        <ion-item class="aluno-vagas">
+          <ion-label>
+            <h2 class="cargo-empresa">{{vaga.cargo}} </h2>
+            <p>{{vaga.areaAtuacao}}</p>
+            <p>{{vaga.empresa.nomeRazaoSocial}} </p>
+          </ion-label>
+          <ion-note color="dark" slot="end">
+            {{vaga.empresa.cidade}}
+          </ion-note>
+        </ion-item>
+
+        <ion-item-options side="end">
+          <ion-item-option id="information">
+            <ion-icon id="{{'open-modal' + i}}" slot="icon-only" name="information"></ion-icon>
+          </ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+    </div>
+    <ion-modal id="modal" #modal trigger="{{'open-modal' + i}}" animated="true">
+      <ng-template>
+        <ion-content>
+          <ion-header>
+            <ion-toolbar>
+              <ion-title> + Infos da vaga </ion-title>
+              <ion-buttons slot="end">
+                <ion-button color="black" (click)="modal.dismiss()" color="black">Fechar</ion-button>
+              </ion-buttons>
+            </ion-toolbar>
+          </ion-header>
+          <ion-list>
+            <ion-item class="word-emp">
+              <ion-icon name="business-outline" slot="start"></ion-icon>
+              <ion-label>
+                <h2>Empresa:</h2>
+                <p class="word-emp" class="word">{{vaga.empresa.nomeRazaoSocial}} </p>
+              </ion-label>
+            </ion-item>
+            <ion-item class="word-cargo">
+              <ion-icon name="rocket-outline" slot="start"></ion-icon>
+              <ion-label>
+                <h2>Cargo:</h2>
+                <p class="word-cargo" class="word">{{vaga.cargo}}</p>
+              </ion-label>
+            </ion-item>
+            <ion-item class="requisitos">
+              <ion-icon name="checkmark-outline" slot="start"></ion-icon>
+              <ion-label>
+                <h2>Requisitos:</h2>
+                <p class="word">
+                  {{vaga.requisitos}}
+                </p>
+              </ion-label>
+            </ion-item>
+            <ion-item class="beneficios">
+              <ion-icon name="gift-outline" slot="start"></ion-icon>
+              <ion-label>
+                <h2>Beneficios:</h2>
+                <p class="beneficios" class="word"> 
+                  {{vaga.beneficios}}
+                </p>
+              </ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+
+    
+
+  </ion-list>
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content class="aluno-vagas" loadingSpinner="bubbles" loadingText="Carregando mais vagas...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 
 </ion-content>

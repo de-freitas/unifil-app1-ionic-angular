@@ -26,8 +26,9 @@ const routes: Routes = [
   {
     path: 'cadastro-vagas/:idEmpresa',
     loadChildren: () => import('./cadastro-vagas/cadastro-vagas.module').then( m => m.CadastroVagasPageModule)
-  },  {
-    path: 'empresa-vagas',
+  },
+  {
+    path: 'empresa-vagas/:idEmpresa',
     loadChildren: () => import('./empresa-vagas/empresa-vagas.module').then( m => m.EmpresaVagasPageModule)
   }
 

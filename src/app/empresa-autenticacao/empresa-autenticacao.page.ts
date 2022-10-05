@@ -52,7 +52,7 @@ export class EmpresaAutenticacaoPage {
     this.service.verificarCredenciais(dados).subscribe(
       (data) =>{
         this.validacaoAcesso = data;
-        this.navigation(`cadastro-vagas/${this.validacaoAcesso.empresaId}`);
+        this.navigation(`empresa-vagas/${this.validacaoAcesso.empresaId}`);
       },
       (erro) => this.mensagem(erro.error[0].message)
     );

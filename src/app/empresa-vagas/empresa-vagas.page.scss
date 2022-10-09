@@ -3,7 +3,7 @@
 }
 .aluno-title {
     text-align: center;
-    padding-right: 25%;
+    padding-right: 20%;
     font-family: sans-serif;
     color: rgb(0, 0, 0);
     font-size: 23px;
@@ -11,10 +11,9 @@
 }
 
 .placeholder {
-    // background-color: #D9D9D9;
+    font-family: sans-serif;
+    color: rgb(0, 0, 0);
     height: 3rem;
-    // width: 100%;
-    // border-radius: 0 0 100% 100%;
     padding: 1rem;
     text-align: center;
     margin-top: 1rem;
@@ -48,6 +47,11 @@
 
 #information {
     color: black;
+    background: #D9D9D9;
+    font-family: sans-serif;
+}
+#delete {
+    color: rgb(189, 47, 47);
     background: #D9D9D9;
     font-family: sans-serif;
 }

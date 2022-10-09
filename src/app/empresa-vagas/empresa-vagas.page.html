@@ -7,11 +7,11 @@
   </ion-toolbar>
 </ion-header>
 
-
+<!--login: 98.752.328/0001-69 // 98.752.328/0001-69 -->
 <ion-content scroll-y="true" fullscreen="true">
   
   <div class="placeholder">
-    Gerencie suas vagas
+    Gerencie as vagas cadastradas
   </div>
 
   <ion-list class="aluno-vagas" lines="full" *ngFor='let vaga of vagas; let i = index'>
@@ -28,11 +28,19 @@
           </ion-note>
         </ion-item>
 
+        <!--+info slide option-->
         <ion-item-options side="end">
           <ion-item-option id="information">
             <ion-icon id="{{'open-modal' + i}}" slot="icon-only" name="information"></ion-icon>
           </ion-item-option>
         </ion-item-options>
+        <!--delete slide option-->
+        <ion-item-options side="start">
+          <ion-item-option id="delete">
+            <ion-icon id="{{'open-modal' + i}}" slot="icon-only" name="trash-outline"></ion-icon>
+          </ion-item-option>
+        </ion-item-options>
+
       </ion-item-sliding>
     </div>
     <ion-modal id="modal" #modal trigger="{{'open-modal' + i}}" animated="true">

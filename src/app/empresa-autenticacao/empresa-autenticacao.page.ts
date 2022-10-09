@@ -17,11 +17,11 @@ export class EmpresaAutenticacaoPage {
 
   async helpButton() {
     const toast = await this.toastController.create({
-      message: "Insira o CNPJ e a Senha para autenticar. Caso ainda não tenha cadastro, clique aqui >>> </strong>",
+      message: "Insira o CNPJ e a Senha para autenticar. Caso ainda não tenha cadastro, clique: </strong>",
       duration: 3000,
       buttons: [
         {
-          icon: 'return-up-forward-outline',
+          icon: 'send-outline',
           cssClass: 'icon',
           role: 'cancel',
           side: 'end',
@@ -52,7 +52,7 @@ export class EmpresaAutenticacaoPage {
     this.service.verificarCredenciais(dados).subscribe(
       (data) =>{
         this.validacaoAcesso = data;
-        this.navigation(`cadastro-vagas/${this.validacaoAcesso.empresaId}`);
+        this.navigation(`empresa-vagas/${this.validacaoAcesso.empresaId}`);
       },
       (erro) => this.mensagem(erro.error[0].message)
     );

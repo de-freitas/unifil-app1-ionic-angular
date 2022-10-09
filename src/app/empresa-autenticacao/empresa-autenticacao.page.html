@@ -8,18 +8,18 @@
 <ion-content [fullscreen]="true" class="auth-body">
 
   <section> 
-    <div id="container-auth">
+    <div id="auth-container">
 
       <div class="auth-informativo">
         <h2> Antes de cadastrar uma vaga, autentique-se:</h2>
       </div>
 
-      <div class="input-auth">
-        <ion-item>
+      <div class="auth-inputs">
+        <ion-item class="auth-input">
           <ion-label position="floating">CNPJ: </ion-label>
           <ion-input id="emp-usu" [(ngModel)]="cnpj" mask="00.000.000/0000-00" placeholder="00.000.000/0000-00" maxlength="80" required="true"> </ion-input>
         </ion-item>
-        <ion-item>
+        <ion-item class="auth-input">
           <ion-label position="floating">Senha: </ion-label>
           <ion-input id="emp-pass" type="password" [(ngModel)]="senha" placeholder="********" maxlength="18" required="true"></ion-input>
         </ion-item>

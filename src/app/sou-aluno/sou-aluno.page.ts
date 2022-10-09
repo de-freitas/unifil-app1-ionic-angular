@@ -18,12 +18,10 @@ export class SouAlunoPage implements OnInit {
   isModalOpen = false;
   setOpen(isOpen: boolean) {
     this.isModalOpen = isOpen;
-    console.log('abriu');
   }
 
   loadData(event) {
     setTimeout(() => {
-      console.log('Done');
       event.target.complete();
 
       // App logic to determine if all data is loaded

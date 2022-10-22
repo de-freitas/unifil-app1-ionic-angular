@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { IonInfiniteScroll, ToastController } from '@ionic/angular';
+import { IonInfiniteScroll, NavController, ToastController } from '@ionic/angular';
 import { ApiRequestService } from '../services/api-request.service';
 import { ViewChild } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class EmpresaVagasPage implements OnInit {
   public vagas: any = [];
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
   
-  constructor(public toastController: ToastController, private service: ApiRequestService) { }
+  constructor(public toastController: ToastController, private service: ApiRequestService, public navCtrl: NavController, private route: ActivatedRoute) { }
 
     isModalOpen = false;
     setOpen(isOpen: boolean) {
@@ -39,18 +40,21 @@ export class EmpresaVagasPage implements OnInit {
       this.infiniteScroll.disabled = !this.infiniteScroll.disabled;
     }
   
+    idEmpresa: number = 0;
     ngOnInit() {
-      //PERGUNTAR CLAUDIN DEPOIS
-      function a() {
-        let height = document.getElementById('modal').clientHeight;
-        console.log(height);
-      }
       this.service.getVagas().subscribe(
         (data) => {
           this.vagas = data;
         },
         (erro) => this.mensagem(erro.error.message)  
       );
+  
+      // pegando ID da empresa para passar como parâmetro na função 'navigation()'
+      this.route.params.subscribe(parametros => {
+        if (parametros['idEmpresa']) {
+          this.idEmpresa = parametros['idEmpresa'];
+        }
+      });  
     }
   
     async mensagem(mensagem: string) {
@@ -66,6 +70,11 @@ export class EmpresaVagasPage implements OnInit {
       });
       toast.present();
     };  
+
+    navigation(idEmpresa: number) {
+      this.navCtrl.navigateForward('/cadastro-vagas/{idEmpresa}');
+    }
+
 }
 
 

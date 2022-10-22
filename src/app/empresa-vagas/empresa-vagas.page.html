@@ -16,12 +16,12 @@
   </div>
 
   <!--botão para cadastrar novas vagas-->
-  <ion-fab class="fab-buttons" vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button class="fab-button">
+  <ion-fab class="fab-button" vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button class="fab-button" size="small">
       <ion-icon name="ellipsis-vertical-outline"></ion-icon>
     </ion-fab-button>
     <ion-fab-list side="top">
-      <ion-fab-button><ion-icon name="duplicate-outline"></ion-icon></ion-fab-button>
+      <ion-fab-button class="fab-button-option"><ion-icon name="duplicate-outline" (click)="navigation()"></ion-icon></ion-fab-button>
     </ion-fab-list>
   </ion-fab>
 

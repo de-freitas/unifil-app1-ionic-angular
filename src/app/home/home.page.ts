@@ -33,19 +33,20 @@ export class HomePage {
   async presentActionSheet() {
     const actionSheet = await this.actionSheetController.create({
       cssClass: 'my-custom-class',
-      buttons: [{
+      buttons: [
+      {
+         text: 'Cadastrar vagas',
+         icon: 'reader-outline',
+         handler: () => {
+           this.navigation('empresa-autenticacao');
+         }
+      },{
         text: 'Cadastrar minha empresa',
         role: 'destructive',
         icon: 'podium-outline',
         id: 'delete-button',
         handler: () => {
           this.navigation('sou-empresa');
-        }
-      }, {
-        text: 'Cadastrar vagas',
-        icon: 'reader-outline',
-        handler: () => {
-          this.navigation('empresa-autenticacao');
         }
       }, {
         text: 'Cancelar',

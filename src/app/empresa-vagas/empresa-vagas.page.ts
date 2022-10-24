@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IonInfiniteScroll, ToastController } from '@ionic/angular';
+import { IonInfiniteScroll, NavController, ToastController } from '@ionic/angular';
 import { ApiRequestService } from '../services/api-request.service';
 import { ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -17,7 +17,7 @@ export class EmpresaVagasPage implements OnInit {
 
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
 
-  constructor(public toastController: ToastController, private route: ActivatedRoute, private service: ApiRequestService) { }
+  constructor(public toastController: ToastController, private service: ApiRequestService, public navCtrl: NavController, private route: ActivatedRoute) { }
 
   isModalOpen = false;
   setOpen(isOpen: boolean) {
@@ -48,6 +48,9 @@ export class EmpresaVagasPage implements OnInit {
         this.idEmpresa = parametros['idEmpresa'];
       }
     });
+  }
+
+  ionViewWillEnter() {
     this.getVagas();
   }
 
@@ -65,6 +68,10 @@ export class EmpresaVagasPage implements OnInit {
     toast.present();
   };
 
+  navigation(idEmpresa: number) {
+    this.navCtrl.navigateForward(`/cadastro-vagas/${this.idEmpresa}`);
+  }
+
   deletarVaga(idVaga: number) {
     this.service.deleteVaga(idVaga).subscribe(
       (data) => {
@@ -75,7 +82,7 @@ export class EmpresaVagasPage implements OnInit {
     );
   }
 
-  getVagas(){
+  getVagas() {
     this.service.getVagas().subscribe(
       (data) => {
         this.vagas = data;
@@ -85,5 +92,8 @@ export class EmpresaVagasPage implements OnInit {
     );
   }
 }
+
+
+
 
 

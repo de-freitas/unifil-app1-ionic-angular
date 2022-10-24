@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ToastController } from '@ionic/angular';
+import { NavController, ToastController } from '@ionic/angular';
 import { ApiRequestService } from '../services/api-request.service';
 
 @Component({
@@ -16,7 +16,8 @@ export class CadastroVagasPage implements OnInit {
   beneficios: string = '';
   salario: number = 0.0;
 
-  constructor(private toastController: ToastController, private route: ActivatedRoute, private service: ApiRequestService) { }
+  constructor(private toastController: ToastController, private route: ActivatedRoute, 
+    public navCtrl: NavController, private service: ApiRequestService) { }
 
   ngOnInit() {
     this.route.params.subscribe(parametros => {
@@ -45,6 +46,8 @@ export class CadastroVagasPage implements OnInit {
         this.beneficios = null;
         this.requisitos = null;
         this.salario = null;
+
+        this.voltarTela();
       },
       (erro) => {
         this.mensagem(erro.error.message);
@@ -65,4 +68,8 @@ export class CadastroVagasPage implements OnInit {
     });
     toast.present();
   };
+
+  voltarTela(){
+    this.navCtrl.navigateForward(`empresa-vagas/${this.idEmpresa}`);
+  }
 }

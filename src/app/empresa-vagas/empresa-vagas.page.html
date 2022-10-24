@@ -9,7 +9,7 @@
 
 <!--login: 98.752.328/0001-69 // 98.752.328/0001-69 -->
 <ion-content scroll-y="true" fullscreen="true">
-  
+
   <div class="placeholder">
     Gerencie as vagas cadastradas
   </div>
@@ -37,7 +37,7 @@
         <!--delete slide option-->
         <ion-item-options side="start">
           <ion-item-option id="delete">
-            <ion-icon id="{{'open-modal' + i}}" slot="icon-only" name="trash-outline"></ion-icon>
+            <ion-icon (click)="deletarVaga(vaga.id)" slot="icon-only" name="trash-outline"></ion-icon>
           </ion-item-option>
         </ion-item-options>
 
@@ -82,7 +82,7 @@
               <ion-icon name="gift-outline" slot="start"></ion-icon>
               <ion-label>
                 <h2>Beneficios:</h2>
-                <p class="beneficios" class="word"> 
+                <p class="beneficios" class="word">
                   {{vaga.beneficios}}
                 </p>
               </ion-label>
@@ -92,7 +92,7 @@
       </ng-template>
     </ion-modal>
 
-    
+
 
   </ion-list>
 

@@ -5,7 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http'
   providedIn: 'root'
 })
 export class ApiRequestService {
-  private url: String = 'https://jobstart-api.herokuapp.com/api/';
+  private url: String = 'http://ec2-3-95-255-76.compute-1.amazonaws.com:8080/api/';
   private options: any = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json; charset=utf-8' })
   };

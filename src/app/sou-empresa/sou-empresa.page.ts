@@ -50,7 +50,11 @@ export class SouEmpresaPage implements OnInit {
         this.mensagem('Empresa cadastrada com sucesso!');
         this.navCtrl.navigateForward('/empresa-autenticacao');
       },
-      (erro) => this.mensagem(erro.error.message)      
+      (erro) => {
+        erro.error.forEach(x => {
+          this.mensagem(x.message);          
+        });
+      }
     );
   }
 

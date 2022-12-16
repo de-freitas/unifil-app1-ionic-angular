@@ -8,10 +8,10 @@
 </ion-header>
 
 <ion-content scroll-y="true" fullscreen="true">
-  <ion-searchbar id="aluno-searchbar" color="light" placeholder="Buscar vagas" showCancelButton="focus">
+  <ion-searchbar id="aluno-searchbar" [(ngModel)]="busca" (change)="buscarVagas()" color="light" placeholder="Buscar vagas" showCancelButton="focus">
   </ion-searchbar>
 
-  <ion-list class="aluno-vagas" lines="full" *ngFor='let vaga of vagas; let i = index'>
+  <ion-list class="aluno-vagas" lines="full" *ngFor='let vaga of vagasMostradas; let i = index'>
     <div class="aluno-vagas">
       <ion-item-sliding class="aluno-vagas">
         <ion-item class="aluno-vagas">
@@ -73,6 +73,24 @@
                 <h2>Beneficios:</h2>
                 <p class="beneficios" class="word"> 
                   {{vaga.beneficios}}
+                </p>
+              </ion-label>
+            </ion-item>
+            <ion-item class="beneficios">
+              <ion-icon name="call-outline" slot="start"></ion-icon>
+              <ion-label>
+                <h2>Telefone:</h2>
+                <p class="beneficios" class="word"> 
+                  {{vaga.empresa.telefone}}
+                </p>
+              </ion-label>
+            </ion-item>
+            <ion-item class="beneficios">
+              <ion-icon name="mail-outline" slot="start"></ion-icon>
+              <ion-label>
+                <h2>E-mail:</h2>
+                <p class="beneficios" class="word"> 
+                  {{vaga.empresa.email}}
                 </p>
               </ion-label>
             </ion-item>

@@ -10,6 +10,8 @@ import { ApiRequestService } from '../services/api-request.service';
 })
 export class SouAlunoPage implements OnInit {
   public vagas: any = [];
+  public vagasMostradas: any = [];
+  public busca: string;
 
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
 
@@ -45,8 +47,9 @@ export class SouAlunoPage implements OnInit {
     this.service.getVagas().subscribe(
       (data) => {
         this.vagas = data;
+        this.vagasMostradas = data;
       },
-      (erro) => this.mensagem(erro.error.message)  
+      (erro) => this.mensagem(erro.error.message)
     );
   }
 
@@ -62,5 +65,15 @@ export class SouAlunoPage implements OnInit {
       ]
     });
     toast.present();
-  };  
+  };
+
+  buscarVagas() {
+    if (this.busca != '') {
+      this.vagasMostradas = this.vagas.filter(x =>
+        x.cargo.includes(this.busca) || x.areaAtuacao.includes(this.busca)
+      );
+    }
+    else
+      this.vagasMostradas = this.vagas;
+  }
 }
